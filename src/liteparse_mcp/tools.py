@@ -10,6 +10,8 @@ from typing import Annotated, Optional
 
 from fastmcp import FastMCP
 from pydantic import Field
+from starlette.requests import Request
+from starlette.responses import JSONResponse
 
 from .imaging import draw_bounding_boxes
 from .parser import make_config, page_to_dict
@@ -26,6 +28,12 @@ mcp = FastMCP(
         "Use search_pdf to find where a phrase appears with exact page coordinates."
     ),
 )
+
+
+@mcp.custom_route("/health", methods=["GET"], include_in_schema=False)
+async def health(request: Request) -> JSONResponse:
+    """Liveness probe for Render / Docker health checks."""
+    return JSONResponse({"status": "ok", "server": "liteparse-mcp"})
 
 
 # ---------------------------------------------------------------------------

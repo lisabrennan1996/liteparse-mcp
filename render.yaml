@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: liteparse-mcp
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    # Render injects $PORT automatically; our Dockerfile passes it through
+    envVars:
+      - key: PORT
+        generateValue: false   # Render manages this
+    healthCheckPath: /health
+    autoDeploy: true           # redeploy on every push to main/master
