@@ -43,9 +43,9 @@ dependencies = [
 liteparse-mcp = "liteparse_mcp.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/YOUR_USERNAME/liteparse-mcp"
-Repository = "https://github.com/YOUR_USERNAME/liteparse-mcp"
-"Bug Tracker" = "https://github.com/YOUR_USERNAME/liteparse-mcp/issues"
+Homepage = "https://github.com/lisabrennan1996/liteparse-mcp"
+Repository = "https://github.com/lisabrennan1996/liteparse-mcp"
+"Bug Tracker" = "https://github.com/lisabrennan1996/liteparse-mcp/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/liteparse_mcp"]
