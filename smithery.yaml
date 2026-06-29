@@ -1,0 +1,18 @@
+# Smithery registry metadata
+# https://smithery.ai/docs/config/smithery-yaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+    additionalProperties: false
+  commandFunction: |-
+    (_config) => ({
+      command: "python",
+      args: ["-m", "liteparse_mcp"],
+      env: {}
+    })
+
+build:
+  dockerfile: Dockerfile

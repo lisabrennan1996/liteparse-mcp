@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "liteparse-mcp"
+version = "0.1.0"
+description = "MCP server for local PDF parsing with spatial bounding boxes and visual citations, powered by LiteParse"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Lisa Brennan" },
+]
+keywords = [
+  "mcp",
+  "pdf",
+  "parsing",
+  "bounding-boxes",
+  "visual-citations",
+  "ocr",
+  "llamaindex",
+  "liteparse",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Text Processing",
+]
+dependencies = [
+  "liteparse>=2.0.0",
+  "fastmcp>=2.0.0",
+]
+
+[project.scripts]
+liteparse-mcp = "liteparse_mcp.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/liteparse-mcp"
+Repository = "https://github.com/YOUR_USERNAME/liteparse-mcp"
+"Bug Tracker" = "https://github.com/YOUR_USERNAME/liteparse-mcp/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/liteparse_mcp"]
